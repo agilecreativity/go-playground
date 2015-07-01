@@ -8,4 +8,6 @@ Excerpted examples are from the following resources available over the interweb.
 - [gotutorial.net - nice tutorial](http://gotutorial.net/golang_lessons.html)
 - [blog.golang.org/piplines](http://blog.golang.org/pipelines)
 - [Concurrent Programming with Go](http://www.pluralsight.com/courses/go-concurrent-programming)
+- [Master Concurrency in Go](https://www.packtpub.com/application-development/mastering-concurrency-go)
+- [Curate list of Golang's Book](https://github.com/dariubs/GoBooks)
 
