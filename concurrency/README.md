@@ -11,4 +11,5 @@ Excerpted examples are from the following resources available over the interweb.
 - [Master Concurrency in Go](https://www.packtpub.com/application-development/mastering-concurrency-go)
 - [Curate list of Golang's Book](https://github.com/dariubs/GoBooks)
 - [The Way to Go - Ivo Balbaert](http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=pd_bxgy_14_img_z)
+- [Golang Patterns](http://www.golangpatterns.info/concurrency/futures)
 
