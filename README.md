@@ -11,3 +11,4 @@ Collection of examples from the tutorials and resources from the interweb.
 - [clipperhouse/gen](https://github.com/clipperhouse/gen)
 - [ffjson - faster JSON for Go](https://github.com/pquerna/ffjson)
 - [the platinum searcher](https://github.com/monochromegane/the_platinum_searcher.git)
+- [GopherConf/2014-talks](https://github.com/gophercon/2014-talks)
