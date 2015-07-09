@@ -1,4 +1,4 @@
-package s13_04_parse
+package parse
 
 import (
 	"fmt"

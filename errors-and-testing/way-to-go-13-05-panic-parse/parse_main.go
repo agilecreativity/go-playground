@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "./s13_04_parse"
+import "./parse"
 
 func main() {
 	var examples = []string{
@@ -14,7 +14,7 @@ func main() {
 
 	for _, ex := range examples {
 		fmt.Printf("Parsing %q:\n ", ex)
-		nums, err := s13_04_parse.Parse(ex)
+		nums, err := parse.Parse(ex)
 
 		if err != nil {
 			// here String() method from ParseError is used
