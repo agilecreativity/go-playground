@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func fibonnacci(c, quit chan int) {
+func fibonacci(c, quit chan int) {
 	x, y := 1, 1
 
 	for {
@@ -27,5 +27,5 @@ func main() {
 		quit <- 0
 	}()
 
-	fibonnacci(c, quit)
+	fibonacci(c, quit)
 }
