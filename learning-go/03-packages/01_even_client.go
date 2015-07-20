@@ -1,6 +1,6 @@
 package main
 
-import "./even"
+import even "./01_even"
 import "fmt"
 
 func main() {
