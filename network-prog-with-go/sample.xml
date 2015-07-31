@@ -1,0 +1,12 @@
+<person>
+  <name>
+    <family>Smith</family>
+    <personal>John</personal>
+  </name>
+  <email type="personal">
+    john@home.com
+  </email>
+  <email type="work">
+    john@work.com"
+  </email>
+</person>
