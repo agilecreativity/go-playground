@@ -13,6 +13,11 @@
       <option value="pear">pear</option>
       <option value="banana">banana</option>
     </select>
+
+    <!-- sample radio button -->
+    <input type="radio" name="gender" value="M">Male</input>
+    <input type="radio" name="gender" value="F">Female</input>
+
     <input type="submit" value="login">
   </form>
 </body>

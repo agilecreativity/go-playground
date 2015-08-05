@@ -47,8 +47,18 @@ func login(w http.ResponseWriter, r *http.Request) {
 			fmt.Printf("FYI: fail validation :%s\n", err.Error())
 		}
 
-		validFruit := validateDropdown(r.Form.Get("fruit"))
+		//validFruit := validateDropdown(r.Form.Get("fruit"))
+
+		validFruit := validateValues(r.Form.Get("fruit"), []string{
+			"apple",
+			"pear",
+			"banana",
+		})
+
 		fmt.Printf("FYI: fruit is valid?: %#v\n", validFruit)
+
+		fmt.Printf("FYI: is valid gender?: %#v\n",
+			validateValues(r.Form.Get("gender"), []string{"M", "F"}))
 	}
 }
 
@@ -69,14 +79,8 @@ func validateAge(age string) (err error) {
 	return
 }
 
-func validateDropdown(value string) bool {
-	fruits := []string{
-		"apple",
-		"pear",
-		"banana",
-	}
-
-	for _, v := range fruits {
+func validateValues(value string, refValues []string) bool {
+	for _, v := range refValues {
 		if v == value {
 			return true
 		}
@@ -96,7 +100,7 @@ func main() {
 
 /* Try:
 // This will be handled by the POST request
-http://localhost:9090/
+http://localhost:9090/login
 
 // These will be handled by the 'GET' request
 http://localhost:9090/login?user_name=john&password=topsecret&age=120
