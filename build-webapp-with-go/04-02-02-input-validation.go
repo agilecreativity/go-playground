@@ -44,8 +44,11 @@ func login(w http.ResponseWriter, r *http.Request) {
 		err := validateAge(age)
 		if err != nil {
 			// Note: just log the validation for now!
-			fmt.Printf("FYI: fail validation :%s", err.Error())
+			fmt.Printf("FYI: fail validation :%s\n", err.Error())
 		}
+
+		validFruit := validateDropdown(r.Form.Get("fruit"))
+		fmt.Printf("FYI: fruit is valid?: %#v\n", validFruit)
 	}
 }
 
@@ -64,6 +67,21 @@ func validateAge(age string) (err error) {
 	}
 
 	return
+}
+
+func validateDropdown(value string) bool {
+	fruits := []string{
+		"apple",
+		"pear",
+		"banana",
+	}
+
+	for _, v := range fruits {
+		if v == value {
+			return true
+		}
+	}
+	return false
 }
 
 func main() {
