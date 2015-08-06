@@ -6,17 +6,11 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"net/textproto"
 	"os"
 	"strconv"
 	"text/template"
 	"time"
 )
-
-type FileHeaer struct {
-	Filename string
-	Header   textproto.MIMEHeader
-}
 
 func upload(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method: ", r.Method)
