@@ -29,7 +29,11 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		t, _ := template.ParseFiles("04-05-01-file-upload.gtpl")
 		t.Execute(w, token)
 	} else {
-		r.ParseMultipartForm(32 << 20)
+		// The parameter is maxMemory int64
+		// See: https://golang.org/pkg/net/http/#Request.ParseMultipartForm
+		const maxMemory int64 = 32 << 20
+		fmt.Printf("FYI: maxMemory used :%d\n", maxMemory)
+		r.ParseMultipartForm(maxMemory)
 		file, handler, err := r.FormFile("uploadfile")
 
 		if err != nil {
@@ -52,15 +56,16 @@ func upload(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = ":9090"
+	}
+
 	http.HandleFunc("/", upload)
-	err := http.ListenAndServe(":9090", nil)
+	err := http.ListenAndServe(port, nil)
 
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
 }
-
-/* Try:
-http://localhost:9090/long_url
-http://localhost:9090/login?user_name=john&password=topsecret
-*/
